@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <artifactId>Hello</artifactId>
+  <packaging>jar</packaging>
+  
+  <properties>
+  	<atguigu.spring.version>4.3.7.RELEASE</atguigu.spring.version>
+  </properties>
+  
+  <name>Hello</name>
+  
+  <!-- 子工程中声明父工程 -->
+  <parent>
+  		 <groupId>com.atguigu.maven</groupId>
+		  <artifactId>Parent</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		  <!-- 以当前文件为基准的父工程 pom.xml文件的相对路径 -->
+		  <relativePath>../Parent/pom.xml</relativePath>
+  </parent>
+  
+  <!-- 声明maven依赖 -->
+  <dependencies>
+  		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <scope>test</scope>
+		</dependency>
+		  		
+		 <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	  <dependency>
+	      <groupId>org.springframework</groupId>
+	      <artifactId>spring-webmvc</artifactId>
+	      <version>${atguigu.spring.version}</version>
+	  </dependency>
+	  
+	  <!-- spring jdbc -->
+	  <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>4.3.7.RELEASE</version>
+		</dependency>
+		
+		<!-- spring test spring单元测试模块 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>4.3.7.RELEASE</version>
+		    <scope>test</scope>
+		</dependency>
+				
+		<!-- spring aspects（面向切面编程） -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-aspects</artifactId>
+		    <version>4.3.7.RELEASE</version>
+		</dependency>
+						
+   </dependencies>
+</project>

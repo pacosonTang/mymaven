@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.atguigu.maven</groupId>
+  <artifactId>Parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+	  
+  <!-- 通过modules 声明聚合安装的工程名称 ，
+  然后统一install，且工程间的放置顺序可以随意 --> 
+  <profiles>
+  	<profile>
+	  <modules>
+	  	<module>../Hello</module>
+	  	<module>../HelloFriend</module>
+	  	<module>../OutFriends</module>
+	  	<module>../MakeFriends</module>
+	  </modules>
+  	</profile>
+  </profiles>
+  
+  
+  <!-- 统一配置依赖的管理 -->
+  <dependencyManagement>
+  	<dependencies>
+  		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.0</version>
+		    <scope>test</scope>
+		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+</project>
